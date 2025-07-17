@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.decomposition import PCA
-from . import clustering
+# Import local pour éviter les imports circulaires
 
 
 def courbure_moyenne(points):
@@ -142,6 +142,8 @@ def evaluate_segmentation(points, labels, target_min=3, target_max=6):
 
 def compare_all_methods(points, target_min=3, target_max=6):
     """Compare toutes les méthodes de clustering sur les mêmes données."""
+    # Import local pour éviter les imports circulaires
+    from . import clustering
     methods = {
         'RANSAC': clustering.run_ransac,
         'Directional': clustering.run_direction_clustering,
